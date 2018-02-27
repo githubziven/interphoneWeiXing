@@ -1,0 +1,12 @@
+
+
+@mixin input-border-variant($color){
+  & input{
+    border-color: $color;
+  }
+}
+@mixin input-padding-variant($select,$padding){
+  & input{
+    #{$select}: $padding
+  }
+}

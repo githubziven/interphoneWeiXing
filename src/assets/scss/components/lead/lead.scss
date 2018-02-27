@@ -1,0 +1,18 @@
+@import "../../helps/var.scss";
+@import "../../helps/mixin.scss";
+
+@include b(lead){
+  font-size: $--lead-title-font-size;
+  padding: 2vmin 0;
+  &:before{
+    display: inline-block;
+    position:absolute;
+    width: $--lead-direct-width;
+    height: $--lead-direct-height;
+    background-color: $--lead-direct-fill;
+    content:'';
+  }
+  & span{
+    padding-left: 3vmin;
+  }
+}

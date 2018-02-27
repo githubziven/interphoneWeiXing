@@ -1,0 +1,41 @@
+@import "../../helps/var.scss";
+@import "../../helps/mixin.scss";
+@import "../../helps/function.scss";
+@import "./mixin.scss";
+
+@include b(input) {
+  width: $--input-width;
+  font-size: $--font-size-base;
+  @include e(inner){
+    width: 100%;
+    border-radius: $--input-border-radius;
+    & input {
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      border: 1px solid #ebeef5;
+      padding:$--input-padding-default;
+      border-radius: $--input-border-radius;
+      &:focus {
+        outline: none;
+        border-color: $--input-focus-border;
+      }
+    }
+
+  }
+
+  @include m(prefix){
+    $padding-select:'padding-left';
+    @include input-padding-variant($padding-select,$--input-padding-prefix)
+  }
+  @include m(suffix){
+    $padding-select:'padding-right';
+    @include input-padding-variant($padding-select,$--input-padding-suffix)
+  }
+   @include e(tips) {
+    position: absolute;
+    display: block;
+    left:pxTov(5px, 1vmin);
+    color: $--color-danger
+  }
+}
